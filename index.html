@@ -15,6 +15,12 @@
     <meta name="twitter:image" content="https://harmann-gill.netlify.app/profile.jpg" />
   </head>
   <body>
+    <!-- A hidden HTML form for Netlify to discover the React form -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
