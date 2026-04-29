@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'motion/react';
 import { ArrowRight, TrendingUp, ShieldCheck, DollarSign } from 'lucide-react';
+import profileImg from '../assets/profile.jpg';
 
 export default function Hero() {
   const { scrollY } = useScroll();
@@ -79,7 +80,7 @@ export default function Hero() {
             >
               <div className="absolute inset-0 animate-pulse bg-slate-200"></div>
               <img 
-                src="/profile.jpg" 
+                src={profileImg} 
                 alt="Harmann Gill - Financial Professional" 
                 className="absolute inset-0 w-full h-full object-cover object-top"
               />

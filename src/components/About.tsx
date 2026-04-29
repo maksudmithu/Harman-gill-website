@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import profileImg from '../assets/profile.jpg';
 
 export default function About() {
   return (
@@ -11,7 +12,7 @@ export default function About() {
               <div className="relative aspect-square max-w-sm mx-auto lg:mx-0 rounded-full overflow-hidden border-8 border-white shadow-xl relative z-20">
                 <div className="absolute inset-0 bg-slate-200 animate-pulse"></div>
                 <img 
-                  src="/profile.jpg" 
+                  src={profileImg} 
                   alt="Harmann Gill Profile" 
                   className="absolute inset-0 w-full h-full object-cover"
                 />
