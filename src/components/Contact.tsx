@@ -27,11 +27,17 @@ export default function Contact() {
     const form = e.currentTarget;
     const formData = new FormData(form);
     
+    // Convert FormData to URLSearchParams
+    const params = new URLSearchParams();
+    for (const [key, value] of formData.entries()) {
+      params.append(key, value as string);
+    }
+    
     // Netlify form submission with fetch
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData as any).toString(),
+      body: params.toString(),
     })
       .then(() => {
         setIsSuccess(true);

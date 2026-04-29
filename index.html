@@ -16,10 +16,11 @@
   </head>
   <body>
     <!-- A hidden HTML form for Netlify to discover the React form -->
-    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <form name="contact" data-netlify="true" hidden>
       <input type="text" name="name" />
       <input type="email" name="email" />
       <textarea name="message"></textarea>
+      <button type="submit">Send</button>
     </form>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
