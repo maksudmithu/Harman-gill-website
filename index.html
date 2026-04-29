@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Harmann Gill | Financial Advisor</title>
     <!-- Open Graph / Meta tags for link preview -->
     <meta property="og:title" content="Harmann Gill | Financial Advisor" />
@@ -16,10 +17,12 @@
   </head>
   <body>
     <!-- A hidden HTML form for Netlify to discover the React form -->
-    <form name="contact" data-netlify="true" hidden>
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
       <input type="text" name="name" />
       <input type="email" name="email" />
       <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
       <button type="submit">Send</button>
     </form>
     <div id="root"></div>

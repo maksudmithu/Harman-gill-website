@@ -27,17 +27,11 @@ export default function Contact() {
     const form = e.currentTarget;
     const formData = new FormData(form);
     
-    // Convert FormData to URLSearchParams
-    const params = new URLSearchParams();
-    for (const [key, value] of formData.entries()) {
-      params.append(key, value as string);
-    }
-    
     // Netlify form submission with fetch
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: params.toString(),
+      body: new URLSearchParams(formData as any).toString(),
     })
       .then(() => {
         setIsSuccess(true);
@@ -89,6 +83,11 @@ export default function Contact() {
             >
               {/* Hidden input for Netlify forms */}
               <input type="hidden" name="form-name" value="contact" />
+              <p className="hidden">
+                <label>
+                  Don't fill this out if you're human: <input name="bot-field" />
+                </label>
+              </p>
               
               <div className="space-y-4">
                 <div>
